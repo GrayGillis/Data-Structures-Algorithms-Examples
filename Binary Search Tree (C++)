@@ -1,0 +1,67 @@
+// This is an example of finding the inorder successor and inorder predecessor from a binary search tree in C++.
+
+//inputNode is the input node
+//trying to find its successor
+
+Node findInOrderSuccessor(Node inputNode){  
+  if(inputNode == null){
+    return null;
+  }// base case
+  else{
+    return getLeftNode(inputNode->right);
+   }
+   
+   Node parent = inputNode->parent;
+   Node child = inputNode;
+   
+   while(parent->right = child){
+    if(parent->parent == child){
+      return null;
+    }
+    else{
+     child = parent;
+     parent = parent->parent;
+    }
+   }// end while loop 
+}// end findInOrderSuccessor
+
+Node getLeftNode(Node n){
+  while(n->left){//iterates all the way to the last left node
+    n = n->left;
+  }// end while loop
+  return n;
+}// end getLeftNode
+
+-------------------------------------------------------------
+
+//inputNode1 is the input node
+//trying to find its predecessor
+
+Node findInOrderPredecessor(Node inputNode1){
+  if(inputNode1 == null){
+    return null;
+  }
+  else{
+    return getRightNode(inputNode1->left);
+  }
+  
+  Node parent = inputNode1->parent;
+  Node child = inputNode1;
+  
+  while(parent->left = child){
+    if(parent->parent == child){
+      return null;
+    }
+    else{
+      child = parent;
+      parent = parent->parent;
+    }
+  }// end while loop 
+}
+
+Node getRightNode(Node n1){
+  while(n1->right){
+    n1 = n1->right;
+  }// end while loop
+  return n1;
+}
