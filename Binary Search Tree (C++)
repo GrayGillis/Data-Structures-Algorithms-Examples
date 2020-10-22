@@ -23,6 +23,7 @@ Node findInOrderSuccessor(Node inputNode){
      parent = parent->parent;
     }
    }// end while loop 
+   return parent;//the InOrder Successor
 }// end findInOrderSuccessor
 
 Node getLeftNode(Node n){
@@ -57,7 +58,8 @@ Node findInOrderPredecessor(Node inputNode1){
       parent = parent->parent;
     }
   }// end while loop 
-}
+  return parent;// the InOrder Precedessor
+}// end findInOrderPrecedessor 
 
 Node getRightNode(Node n1){
   while(n1->right){
