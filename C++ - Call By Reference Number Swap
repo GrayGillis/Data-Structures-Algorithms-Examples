@@ -1,0 +1,41 @@
+#include <iostream>
+using namespace std;
+
+int swapNum(int x1, int y1){//pass by value
+    x1 = 50;
+    y1 = 10;
+}
+
+void swapNoTemp(int x, int y){// swap values with no temp variable (pass by value)
+    x = x + y;
+    y = x - y;
+    x = x - y;
+}
+
+int swap(int* x1, int* y1){//pass by reference (numbers change)
+    *x1 = 50;
+    *y1 = 10;
+}
+
+int swapTemp(int &x1, int &y1){//using temp variable for numbers change
+    int z = x1;
+    x1 = y1;
+    y1 = z;
+}
+
+int main()
+{
+    int x = 10;
+    int y = 50;
+    cout << "Before swap x = " << x << " & y = " << y << endl << endl;
+    swapNum(x, y);//no change
+    cout << "x = " << x << " " << "y = " << y << endl; 
+    swapNoTemp(x, y);//no change
+    cout << "x = " << x << " " << "y = " << y << endl; 
+    swap(x, y);//correct swap
+    cout << "x = " << x << " " << "y = " << y << endl;
+    x = 10;//reset x
+    y = 50;//reset y
+    swapTemp(x, y);//correct swap
+    cout << "x = " << x << " " << "y = " << y << endl; 
+}
