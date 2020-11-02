@@ -3,20 +3,17 @@
 #include <iostream>
 using namespace std;
 
-void swapNumbers(int *minNumber, int *newNumber)  
-{//swaps the min value number with a new number 
+void swapNumbers(int *minNumber, int *newNumber){//swaps the min value number with a new number 
     int temp = *minNumber;  
     *minNumber = *newNumber;  
     *newNumber = temp;  
 }  
 
-void selectionSort(int myArrayNumbers[], int sizeofArray)  
-{//uses selectionSort to sort through the int array
+void selectionSort(int myArrayNumbers[], int sizeofArray){//uses selectionSort to sort through the int array
     int minIndex;// min index number
   
     // One by one move boundary of unsorted subarray  
-    for (int i = 0; i < sizeofArray - 1; i++)  
-    {  
+    for (int i = 0; i < sizeofArray - 1; i++){  
         // Find the minimum element in unsorted array  
         minIndex = i;  
         for (int j = i + 1; j < sizeofArray; j++){
@@ -38,8 +35,7 @@ void printArray(int myArrayNumbers[], int sizeofArray)
     cout << endl;//new line
 } 
 
-int main()
-{//selection sort
+int main(){//selection sort
     cout<<"Here's the unsorted array of numbers: ";
     int myArrayNumbers[] = {3,1,9,5,12,16,4,6,7,27,18,36,3};
     int sizeofArray = sizeof(myArrayNumbers)/sizeof(myArrayNumbers[0]);  
