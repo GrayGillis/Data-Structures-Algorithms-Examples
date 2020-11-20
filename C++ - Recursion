@@ -1,0 +1,51 @@
+#include <iostream>
+using namespace std;
+
+static int factorialNum(int num){
+    if (num == 0){
+        return 1;
+    }
+    else{
+        return num * factorialNum(num - 1);
+    }
+}
+
+static int fibanocciNum(int num){
+    if ((num == 0) || (num == 1)){
+        return 1;
+    }
+    else{
+        return fibanocciNum(num - 1) + fibanocciNum(num - 2);
+    }
+}
+
+int main()
+{
+    cout << "Welcome to the C++ Recursion Numbers Menu:" << endl;
+    int count = 0;
+    int userInput;
+    while (count < 10){
+        cout << "Choose one of the options: \n"
+			<<	+ "1. Factorial \n"
+			<<	+ "2. Fibanocci \n"
+			<<	+ "3. Exit\n" << endl;
+		cin >> userInput;
+		if (userInput == 1){//factorial
+		    int fact;
+		    cout << "Pick a number for the factorial" << endl;
+		    cin >> fact;
+		    cout << "The answer to the factorial of " << fact << " is " << factorialNum(fact) << endl << endl;
+		}
+		else if (userInput == 2){//fibanocci
+		    int fib;
+		    cout << "Pick a number for the fibanocci" << endl;
+		    cin >> fib;
+		    cout << "The anser to the fibanocci of " << fib << " is " << fibanocciNum(fib) << endl << endl;
+		}
+		else{//exit
+		    count += 20;
+		}
+    }
+    
+    return 0;
+}
